@@ -1,0 +1,105 @@
+<div class="container text-center w-100 animate__animated animate__fadeIn">
+
+
+    <div class="row mt-md-5 mt-xl-5 d-none d-sm-none d-xl-block">
+        <h1 class="text-center mt-xl-5 mt-2 pt-5 color2">
+            Editar acerca de:
+            {{ persona.nombre }} {{ persona.apellido }}
+        </h1>
+    </div>
+
+    <div class="d-flex">
+        <div fxLayout="row" fxLayoutGap="40px" fxLayout.xs="column" class="me-5 mt-xl-5 position-absolute top-50 start-50 translate-middle">
+            <div fxFlex="50" fxFlex.sm="100" fxFlex.xs="100" fxLayout="column" class="me-xl-5">
+
+                <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px">
+                    <mat-form-field fxFlex="47" fxLayout.xs="column">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput type="text" [(ngModel)]="persona.nombre" required>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="47">
+                        <mat-label>Apellido</mat-label>
+                        <input matInput type="text" [(ngModel)]="persona.apellido" required>
+                    </mat-form-field>
+                </div>
+
+                <mat-form-field>
+                    <mat-label>Profesion</mat-label>
+                    <input matInput type="text" [(ngModel)]="persona.profesion" required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Descripcion</mat-label>
+                    <input matInput type="text" [(ngModel)]="persona.descripcion" required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Descripcion</mat-label>
+                    <input matInput type="text" [(ngModel)]="persona.descripcionDos" required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Descripcion</mat-label>
+                    <input matInput type="text" [(ngModel)]="persona.descripcionTres" required>
+                </mat-form-field>
+
+
+                <mat-form-field>
+                    <mat-label>Cambiar foto</mat-label>
+                    <input matInput type="url" [(ngModel)]="persona.imgUno" required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Cambiar foto</mat-label>
+                    <input matInput type="url" [(ngModel)]="persona.imgDos" required>
+                </mat-form-field>
+
+                <br>
+
+                <div fxLayout>
+
+                    <button mat-raised-button class="zoom me-2 color" (click)="actualizarPersona()">
+                        <mat-icon>edit</mat-icon>
+                        Actualizar
+                    </button>
+
+                    <span class="spacer"></span>
+
+                    <button mat-raised-button class="zoom ms-2 colorBoton" (click)="cancelar()">
+                        <mat-icon>keyboard_return</mat-icon>
+                        Cancelar
+                    </button>
+
+                </div>
+            </div>
+
+            <div fxFlex="50" class="d-none d-sm-none d-md-block">
+                <div id="carouselExampleControls" class="carousel slide mt-2 tamaño" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img [src]="persona | imagenDos" class="img-fluid imgUno d-block w-100 byn">
+                        </div>
+                        <div class="carousel-item">
+                            <img [src]="persona | imagenUno" class="img-fluid imgUno d-block w-100 byn">
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <app-footer class="d-none d-xl-block"></app-footer>
+
+    </div>

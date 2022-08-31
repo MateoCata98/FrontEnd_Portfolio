@@ -1,0 +1,13 @@
+<h3>¿Eliminar elemento?</h3>
+<hr>
+<p>
+    <small>
+        Estás a punto de borrar {{ data.titulo}}
+        <br>
+        ¿Desea continuar?
+    </small>
+</p>
+<div class="text-center">
+    <button mat-button (click)="borrarElemento()" class="me-3">Sí, borrar!</button>
+    <button mat-button (click)="cerrar()">Cancelar</button>
+</div>

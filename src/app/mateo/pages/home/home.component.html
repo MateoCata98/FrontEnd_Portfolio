@@ -1,0 +1,61 @@
+<div class="w-100">
+    <header class="navbar bd-navbar">
+        <nav class="col-12 d-flex bd-gutter flex-wrap">
+            
+            <div class="ms-1">
+                <a href="https://argentinaprograma.inti.gob.ar/">
+                    <img src="/assets/img/argprograma.png" alt="Logo Argentina Programa" class="p-1">
+                </a>
+            </div>
+            
+            <div class="spacer"></div>
+            
+            <a routerLink="./" class="text-decoration-none d-none d-md-block">
+                <button mat-button class="text-light inicio">
+                    INICIO
+                </button>
+            </a>
+            
+            <div>
+                <button mat-button [matMenuTriggerFor]="beforeMenu" class="me-0">
+                    <mat-icon>menu</mat-icon>
+                </button>
+                
+                <mat-menu #beforeMenu="matMenu" xPosition="before" class="m-3 fondo">
+                    
+                    <a routerLink="./acerca-de" class="text-decoration-none">
+                        <button mat-menu-item class="text-light">
+                            <mat-icon class="iconos">person</mat-icon>
+                            <span class="negro">Acerca de</span>
+                        </button>
+                    </a>
+                    
+                    <a routerLink="./programacion/educacion" class="text-decoration-none">
+                        <button mat-menu-item class="text-light">
+                            <mat-icon class="iconos">menu_book</mat-icon>
+                            <span class="negro">Programacion</span>
+                        </button>
+                    </a>
+                    
+                    <a routerLink="./contacto" class="text-decoration-none">
+                        <button mat-menu-item class="text-light">
+                            <mat-icon class="iconos">mail</mat-icon>
+                            <span class="negro">Contacto</span>
+                        </button>
+                    </a>
+                    
+                    
+                    <button mat-menu-item class="text-light" (click)="logout()">
+                    <mat-icon class="iconos">logout</mat-icon>
+                    <span class="negro">Cerrar Sesión</span>
+                </button>
+ 
+            </mat-menu>
+        </div>
+        
+    </nav>
+</header>
+</div>
+
+
+<router-outlet></router-outlet>

@@ -1,0 +1,67 @@
+<div class="container w-100 text-center">
+
+    <div class="d-flex animate__animated animate__fadeIn animate__fast">
+        <div fxLayout="row" fxLayoutGap="40px" fxLayout.xs="column" class="me-5 mt-lg-5 position-absolute top-50 start-50 translate-middle">
+            <div fxFlex="50" fxFlex.sm="100" fxFlex.xs="100" fxLayout="column" class="me-xl-5">
+
+                <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="20px">
+                    <mat-form-field fxFlex="47" fxLayout.xs="column">
+                        <mat-label>Institución</mat-label>
+                        <input matInput type="text" [(ngModel)]="experiencia.nombreE" required>
+                    </mat-form-field>
+
+                    <mat-form-field fxFlex="47">
+                        <mat-label>Area</mat-label>
+                        <input matInput type="text" [(ngModel)]="experiencia.areaExp" required>
+                    </mat-form-field>
+                </div>
+
+                <mat-form-field>
+                    <mat-label>Informacion</mat-label>
+                    <input matInput type="text" [(ngModel)]="experiencia.informacionExp" required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Fecha:</mat-label>
+                    <input matInput type="text" [(ngModel)]="experiencia.fechaExp" required>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Modalidad</mat-label>
+                    <mat-select required [(ngModel)]="experiencia.modalidadExp">
+                        <mat-option *ngFor="let modalidad of modalidad" [value]="modalidad.id" class="color">
+                            {{ modalidad.desc }}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+
+                <mat-form-field>
+                    <mat-label>Foto Url</mat-label>
+                    <input matInput type="url" [(ngModel)]="experiencia.imgExp" required>
+                </mat-form-field>
+
+                <br>
+
+                <div fxLayout>
+                    <button mat-raised-button class="me-1 color zoom" (click)="guardar()">
+                        <mat-icon>edit</mat-icon>
+                        {{( experiencia.idExp )? 'Actualizar' : 'Crear'}}
+                    </button>
+
+                    <span class="spacer"></span>
+
+                    <button mat-raised-button class="ms-1 colorBoton zoom" *ngIf="experiencia.idExp"
+                        (click)="borrarExperiencia()">
+                        <mat-icon>remove</mat-icon>
+                        Eliminar
+                    </button>
+                </div>
+            </div>
+
+            <div fsFlex="50" class="d-none d-lg-block">
+                <img [src]="experiencia | imagenExp" class="img-fluid ms-5 foto">
+            </div>
+
+        </div>
+    </div>
+</div>

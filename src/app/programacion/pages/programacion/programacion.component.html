@@ -1,0 +1,38 @@
+<div class="row center mt-5 w-100">
+    <div class="col-12 col-md-8 col-lg-6 col-xl-4 programacion mt-xl-5">
+        <ul class="list-group list-group-horizontal p-0">
+            <li *ngFor="let item of menu"
+                class="list-group-item  list-group-item-action list-group-item-dark fondo text-center zoom"
+                [routerLink]="[ item.ruta ]" routerLinkActive="active">
+                <a class="d-none d-sm-none d-md-block text-light text-decoration-none">
+                    {{ item.texto}}
+                </a>
+                <mat-icon class="d-block d-sm-block d-md-none color2">
+                    {{ item.icono }}
+                </mat-icon>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+<div class="row position-absolute top-50 start-50 translate-middle w-100">
+    <router-outlet></router-outlet>
+</div>
+
+<div class="col-4 d-none d-xl-block position-absolute bottom-0 start-50 translate-middle-x mt-3">
+    <div class="row">
+        <div class="d-flex center ">
+            <hr class="w-50 text-dark" style="border:solid 1px white;">
+            <mat-icon class="iconos text-dark mx-2">code</mat-icon>
+            <hr class="w-50 text-dark" style="border:solid 1px white;">
+        </div>
+
+        <div class="col-12 d-flex mb-3 center">
+            <a href="https://www.facebook.com/mateo.catalano.5"><img src="/assets/img/facebook.png" class="m-2 logo logoZoom"></a>
+            <a href="https://github.com/MateoCata98"><img src="/assets/img/github.png" class="m-2 logo logoZoom"></a>
+            <a href="https://www.instagram.com/mateo.cata/"><img src="/assets/img/instagram.png" class="m-2 logo logoZoom"></a>
+        </div>
+    </div>
+</div>

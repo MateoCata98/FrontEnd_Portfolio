@@ -1,0 +1,35 @@
+<div class="position-absolute top-50 start-50 translate-middle center">
+      <form class="text-dark p-3 bg-light  registro animate__animated animate__fadeIn" autocomplete="off"
+      [formGroup]="miFormulario" (ngSubmit)="login()">
+      <div class="m-3 center">
+        <img src="/assets/img/mateo2.png">
+      </div>
+      <div class="mb-3 mt-5">
+        <input type="email" formControlName="nombreUsuario" placeholder="Nombre de usuario"
+        class="form-control form-control-lg" />
+      </div>
+      <div class="mb-3">
+        <input type="password" formControlName="password" placeholder="Contraseña"
+        class="form-control form-control-lg" />
+      </div>
+      <div class="text-center mt-3 mb-2">
+        <button type="submit" class="btn btn-dark" style="width: 100%;" [disabled]="miFormulario.invalid">
+          Iniciar Sesion
+        </button>
+      </div>
+      <div class="d-flex center">
+        <hr class="w-25">
+        <mat-icon class="iconos text-secondary mx-2">code</mat-icon>
+        <hr class="w-25">
+      </div>
+      <p class="mt-2 text-center"><small>
+        Bienvenidos a mi portfolio web. Te invito a registrarte e iniciar sesíón para poder acceder.
+      </small></p>
+    </form>
+    
+    <div class="d-flex bg-light text-dark mt-3 p-3 center registro animate__animated animate__fadeIn">
+      <p class="mt-2">¿No tienes una cuenta?</p>
+      <a href="/auth/registro" class="text-decoration-none ms-2 mb-1">Regístrate</a>
+    </div>
+</div>
+

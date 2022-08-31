@@ -1,0 +1,41 @@
+<div class="position-absolute top-50 start-50 translate-middle center">
+  <form class="text-dark p-3 bg-light  registro animate__animated animate__fadeIn" autocomplete="off"
+        [formGroup]="miFormulario" (ngSubmit)="registro()">
+        <div class="mb-2 ms-2 center">
+          <img src="/assets/img/portfolioWeb.png">
+        </div>
+        <div class="d-flex center mb-2">
+          <hr class="w-25">
+          <mat-icon class="iconos text-secondary mx-2">code</mat-icon>
+          <hr class="w-25">
+        </div>
+        <div class="mb-3">
+          <input type="email" formControlName="nombre" placeholder="Nombre completo"
+            class="form-control form-control-lg"/>
+        </div>
+        <div class="mb-3">
+          <input type="email" formControlName="nombreUsuario" placeholder="Nombre de usuario"
+            class="form-control form-control-lg"/>
+        </div>
+        <div class="mb-3">
+          <input type="email" formControlName="email" placeholder="Correo electrónico"
+            class="form-control form-control-lg"/>
+        </div>
+        <div class="mb-3">
+          <input type="password" formControlName="password" placeholder="Contraseña"
+            class="form-control form-control-lg"/>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-dark" style="width: 100%;"
+            [disabled]="miFormulario.invalid">
+            Regístrate
+          </button>
+        </div>
+      </form>
+
+      <div class=" d-flex bg-light text-dark mt-3 p-3 registro animate__animated animate__fadeIn">
+        <p class="mt-2 ms-4 me-2">¿Ya tienes una cuenta?</p>
+        <a href="/auth/login" class="mt-2 text-decoration-none">Iniciar Sesión</a>
+      </div>
+</div>
+

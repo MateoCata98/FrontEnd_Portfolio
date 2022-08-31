@@ -1,1 +1,69 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { color:rgb(255, 255, 255); margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
+  background-image: linear-gradient(
+                    0deg,
+                    rgba(0,0,0,0.5),
+                    rgba(0,0,0,0.5)
+                    )
+                    , url('/assets/img/fondo.jpg');}
+
+.spacer {
+  flex: 1 1 auto;
+}
+.color{
+    background-color: rgb(122, 133, 180);
+    color: rgb(30,35,64);
+  }
+  .color2 {
+    color: rgb(122, 133, 180);
+  }
+  .colorBoton {
+    color: rgb(122, 133, 180);
+    background-color: rgb(30,35,64);
+  }
+  .center {
+    align-items: center;  
+    justify-content: center; 
+   }
+   .zoom{
+    transition: transform .5s;
+  }
+  .zoom:hover{
+    transform: scale(0.95);
+  }
+  .zoomT{
+    transition: transform .5s;
+  }
+  .zoomT:hover{
+    transform: scale(0.95);
+    color: rgb(122, 133, 180);
+  }
+  .lila{
+    transition: transform .5s;
+  }
+  .lila:hover{
+    color: rgb(122, 133, 180);
+  }
+  .negro{
+    transition: transform .5s;
+  }
+  .negro:hover{
+    color: rgb(0, 0, 0);
+  }
+  .byn{
+    filter: grayscale(100%);
+    transition: transform .5s;
+  }
+  .byn:hover{
+    transform: scale(0.95);
+    filter: none;
+    -webkit-filter: grayscale(0%);
+  }
+  .logoZoom{
+    transition: transform .3s;
+  }
+  .logoZoom:hover{
+    transform: scale(1.3);
+  }

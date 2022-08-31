@@ -1,0 +1,53 @@
+<div class="row mt-5 w-100 ps-lg-5 ps-md-3 center">
+  <div class="col-6 mt-5 mt-xl-3 ps-5 pb-lg-3 tamaño">
+
+    <p-scrollPanel [style]="{width: '100%', height: '515px'}">
+      <div fxLayoutAling="center" fxLayout="row wrap" fxLayout.xs="column" fxLayoutGap="21px">
+
+        <div class="col-12">
+          <a routerLink="/mateo/programacion/educacion/agregar" class="text-decoration-none text-light">
+            <button mat-icon-button class="float-end text-center me-3">
+              <mat-icon>add</mat-icon>
+            </button>
+          </a>
+        </div>
+
+        <div fxFlex="47" fxFlex.md="100" fxFlex.lg="100" fxFlex.sm="100" fxFlex.xs="100" *ngFor="let educacion of educacion" class="animate__animated animate__fadeIn animate__fast zoom">
+          <div class="card text-light mb-3 fondo sombra" style="max-width: 540px;">
+
+            <div class="row g-0">
+              <div class="col-md-3 center d-none d-sm-none d-md-block">
+                <img mat-card-image [src]="educacion | imagen" class="img-fluid rounded-start pt-3 ps-3 foto"
+                  alt="Educacion Logo">
+              </div>
+
+              <div class="col-md-9">
+                <div class="card-body ms-2">
+
+                  <div class="row g-0">
+                    <div class="col-9">
+                      <h2 class="card-title m-0">{{ educacion.nombreI }}</h2>
+                    </div>
+                    <div class="col-3">
+                      <a [routerLink]="['/mateo/programacion/educacion/editar', educacion.id ]" class="text-decoration-none text-secondary me-3">
+                        <button mat-icon-button class="float-end text-center">
+                          <mat-icon class="color2">edit</mat-icon>
+                        </button>
+                      </a>
+                    </div>
+                  </div>
+                  <h3 class="m-0">{{ educacion.titulo }}</h3>
+                  <p class="card-text m-0"><small>{{ educacion.informacion }}</small></p>
+                  <p class="card-text m-0"><small class="color2"> Modalidad: {{ educacion.modalidad }} - Fecha: {{
+                      educacion.fecha }}</small>
+                  </p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </p-scrollPanel>
+  </div>
+</div>
